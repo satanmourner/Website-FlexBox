@@ -13,6 +13,8 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   text-transform: capitalize;
+  line-height: 30px;
+  text-align: justify;
   color: white;
   height: 100%;
 }
@@ -63,22 +65,37 @@ li#target {
   display: block;
   width: 20%;
   height: 70px;
+  text-align: center;
 }
 
-p.logo {
-  background-image: url("logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+img.logo {
   position: absolute;
-  width: 12%;
-  height: 110px;
-  z-index: 1;
+  top: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1; 
 }
 
-p.logo:active {
+img.logo:active {
   transform: scaleY(2);
-  transition: transform 0.2s ease;
+}
+
+img.onLogo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+  width: 40px;
+  animation: trans 1.5s linear infinite;
+}
+
+@keyframes trans {
+  0% { transform: translateY(0); opacity: 1;}
+  50% { transform: translateY(45px); opacity: 0;}
+  100% { transform: translateY(0); opacity: 0;}
 }
 
 div.bg-container {
@@ -88,6 +105,7 @@ div.bg-container {
 }
 
 div.bg {
+  top:0;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -136,14 +154,17 @@ div.header {
 }
 
 button#click {
-  width: 12%;
   background-color: rgb(145, 95, 145);
   border: none;
   border-radius: 25px;
   box-shadow: 2px 2px 5px black;
-  padding: 10px 15px;
   text-align: center;
   font-size: 20px;
+}
+
+#click p {
+  padding: 10px;
+  text-align: center;
 }
 
 button#click:disabled {
@@ -189,18 +210,36 @@ div.container {
 
 article {
   background-color: black;
-  height: 50%;
+  padding: 20px;
   width: 100%;
   color: white;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  text-transform: none;
   justify-content: center;
   align-items: center;
 }
 
 article h2 {
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+div#paragraph {
+  width: 60%;
+  align-self: center;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+article p {
+  padding: 10px;
+}
+
+article a {
+  text-decoration: none;
+  color: antiquewhite;
 }
 
 hr {
@@ -210,20 +249,33 @@ hr {
 
 section {
   top: 0;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
   background-color: rgba(66, 34, 95);
   color: aliceblue;
   text-align: center;
-  padding: 15px;
+  padding: 25px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
 }
 
-section h2 {
+div.hr {
   width: 100%;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, rgba(39, 25, 39, 0.432), rgb(145, 20, 145), rgba(39, 25, 39, 0.445)) 1; /*impo*/
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section h2 {
+  position: absolute;
+  text-align: center;
+  width: 30%;
   background-color: rgba(66, 34, 95);
 }
 
@@ -232,14 +284,13 @@ div.grid-1 {
   text-align: start;
   display: inline-block;
   flex: 1;
-  width: 49%;
+  width: 50%;
   padding: 25px;
 }
 /**************************/
 
 div.grid-cards {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -249,7 +300,7 @@ div.grid-cards {
 div.card-1  {
   width: 25%;
   margin: 10px;
-  height: 300px;
+  height: 200px;
   text-align: center;
   padding: 10px;
   position: relative;
@@ -274,6 +325,8 @@ div.card-1:hover .cover-img{
 
 div.cover-img {
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   top: 0;
   left: 0;
@@ -294,6 +347,7 @@ footer {
   background-color: rgba(66, 34, 95, 0.473);
   padding: 15px;
   bottom: 0;
+  display: block;
 }
 
 @media screen and (max-width: 1300px) {
@@ -302,9 +356,6 @@ footer {
   }
   div.main {
     width: 80%;
-  }
-  p.logo {
-    width: 16%;
   }
 }
 
@@ -321,6 +372,16 @@ footer {
   li#target {
     display: none;
   }
+  section h2 {
+    width: 50%;
+  }
+  div#paragraph {
+    width: 80%;
+  }
+  div.card-1 {
+    width: 30%;
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 600px){
@@ -329,10 +390,85 @@ footer {
     display: block;
     width: 100%;
   }
-  div.grid-section {
+
+  section {
     flex-direction: column;
   }
-  .grid-1 {
+
+  div.grid-1 {
     width: 100%;
+    text-align: center;
+  }
+
+  div#paragraph {
+    width: 100%;
+  }
+
+  section h2 {
+    width: 70%;
+  }
+
+  div.card-1 {
+    height: 150px;
+    width: 35%;
+  }
+
+  .cover input, button#sub {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  div.cover {
+    padding: 0px;
+  }
+  
+  p#date {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .header h1 {
+    padding: 5px;
+    font-size: 35px;
+  }
+
+  button#click {
+    font-size: 10px;
+  }
+
+  #click p, .cover p {
+    padding: 5px;
+    font-size: 10px; 
+   }
+}
+
+@media screen and (max-width: 400px) {
+  div.card-1 {
+    height: 150px;
+    width: 50%;
+  }
+
+  .cover input, button#sub {
+    font-size: 5px;
+    padding: 1px 5px;
+  }
+
+  p#date {
+    padding: 0;
+    font-size: 5px;
+  }
+
+  .header h1 {
+    padding: 0;
+    font-size: 25px;
+  }
+
+  button#click {
+    font-size: 5px;
+  }
+
+  #click p, .cover p {
+    padding: 0px;
+    font-size: 5px;
   }
 }
