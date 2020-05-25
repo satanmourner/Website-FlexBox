@@ -1,7 +1,8 @@
-simple website with flex box grid system use :
+simple website with flexbox grid system use :
 - html5
 - css3
 - ES6
 - jquery
 
-this website is responsive but design not completed yet
+i'm not designer, i've just inspired the design of this website from https://brooklynbeta.org/2013/ 
+and change it with my own style and make it responsive :)
