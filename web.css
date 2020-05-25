@@ -51,7 +51,7 @@ li a {
   display: block;
   padding: 25px;
   width: 20%;
-  color: rgb(124, 112, 128)
+  color: rgb(124, 112, 128);
 }
 
 li a:hover {
@@ -111,7 +111,7 @@ div.bg {
   height: 100%;
   background-color: rgb(88, 61, 88);
   opacity: 0.5;
-  background-image: url('bg.jpg');
+  background-image: url('BG/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; 
@@ -134,22 +134,17 @@ div.cover {
   align-items: center;
 }
 
-p#date {
+span#date {
   padding: 20px;
   color: rgb(243, 180, 224);
 }
 
 div.header {
-  height: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  padding: 100px;
 }
 
 .header h1 {
   font-size: 65px;
-  padding: 20px;
   text-align: center;
 }
 
@@ -171,7 +166,7 @@ button#click:disabled {
   color: rgb(44, 11, 44);
 }
 
-.cover p {
+span#onCover {
   padding: 25px 0px 15px 0px;
   font-size: 14px;
 }
@@ -226,20 +221,15 @@ article h2 {
   padding: 10px;
 }
 
-div#paragraph {
+p#paragraph {
   width: 60%;
   align-self: center;
-  text-align: justify;
+  text-align: center;
   word-wrap: break-word;
 }
 
 article p {
   padding: 10px;
-}
-
-article a {
-  text-decoration: none;
-  color: antiquewhite;
 }
 
 hr {
@@ -263,7 +253,7 @@ section {
 div.hr {
   width: 100%;
   border-bottom: 2px solid;
-  border-image: linear-gradient(to right, rgba(39, 25, 39, 0.432), rgb(145, 20, 145), rgba(39, 25, 39, 0.445)) 1; /*impo*/
+  border-image: linear-gradient(to right, rgba(39, 25, 39, 0.432), rgb(243, 180, 224), rgba(39, 25, 39, 0.445)) 1; /*impo*/
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -300,7 +290,7 @@ div.grid-cards {
 div.card-1  {
   width: 25%;
   margin: 10px;
-  height: 200px;
+  height: 250px;
   text-align: center;
   padding: 10px;
   position: relative;
@@ -345,42 +335,123 @@ div.cover-img {
 footer {
   max-width: 100%;
   background-color: rgba(66, 34, 95, 0.473);
-  padding: 15px;
+  padding: 45px;
   bottom: 0;
-  display: block;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-@media screen and (max-width: 1300px) {
-  div.left, div.right {
-    width: 10%;
-  }
-  div.main {
-    width: 80%;
-  }
+footer span {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+footer a {
+  font-size: 25px;
+  background-image: linear-gradient(to right, rgb(82, 45, 82), rgb(243, 180, 224), rgb(82, 45, 82));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer a:hover {
+  filter: brightness(150%);
+}
+
+footer p {
+  line-height: 40px;
+  color: rgb(243, 180, 224);
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+div.footer-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+footer img {
+  width: 80px;
+  height: 80px;
+}
+
+footer img:hover {
+  filter: brightness(100%);
+}
+
+button#goUp {
+  font-size: 45px;
+  width: 50px;
+  text-align: center;
+  color: rgb(243, 180, 224);
+  background-color: rgba(161, 154, 154, 0.63);
+  border: none;
+  opacity: 0.5;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+button#goUp:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 1000px) {
+  div.left, div.right { width: 10%; }
+
+  div.main { width: 80%; }
 }
 
 @media screen and (max-width:1000px) {
-  div.left, div.right {
-    display: none;
-  }
-  div.main {
-    width: 100%;
-  }
-  li a {
-    width: 25%;
-  }
-  li#target {
-    display: none;
-  }
-  section h2 {
-    width: 50%;
-  }
-  div#paragraph {
-    width: 80%;
-  }
+  div.left, div.right { display: none; }
+
+  div.main { width: 100%; }
+
+  li a { width: 25%; }
+
+  li#target { display: none; }
+
+  section h2 { width: 50%; }
+
+  div#paragraph { width: 80%;}
+
   div.card-1 {
     width: 30%;
     height: 150px;
+  }
+
+  div.cover { padding: 18.5px; }
+
+  span#date {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  div.header { padding: 50px; }
+
+  .header h1 { font-size: 48px; }
+
+  button#click { font-size: 15px; }
+
+  #click p { padding: 7.5px; }
+
+   span#onCover {
+    padding: 18.5px 0px 11px 0px;
+    font-size: 10px;
+  }
+
+  .cover input, button#sub {
+    font-size: 15px;
+    padding: 7.5px 15px;
+  }
+
+  footer {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 
@@ -391,55 +462,50 @@ footer {
     width: 100%;
   }
 
-  section {
-    flex-direction: column;
-  }
+  section { flex-direction: column; }
 
   div.grid-1 {
     width: 100%;
     text-align: center;
   }
 
-  div#paragraph {
-    width: 100%;
-  }
+  div#paragraph { width: 100%; }
 
-  section h2 {
-    width: 70%;
-  }
+  section h2 { width: 70%; }
 
   div.card-1 {
     height: 150px;
     width: 35%;
   }
 
-  .cover input, button#sub {
+  div.cover { padding: 12px; }
+
+  span#date {
     font-size: 10px;
-    padding: 2px 8px;
+    padding: 10px;
   }
 
-  div.cover {
-    padding: 0px;
-  }
-  
-  p#date {
+  div.header { padding: 20px; }
+
+  .header h1 { font-size: 32px; }
+
+  button#click { font-size: 10px; }
+
+  #click p {
+    font-size: 5px;
     padding: 5px;
-    font-size: 10px;
-  }
-
-  .header h1 {
-    padding: 5px;
-    font-size: 35px;
-  }
-
-  button#click {
-    font-size: 10px;
-  }
-
-  #click p, .cover p {
-    padding: 5px;
-    font-size: 10px; 
    }
+
+   span#onCover {
+    padding: 12px 0px 7px 0px;
+    font-size: 7px;
+  }
+
+   .cover input, button#sub {
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -448,27 +514,28 @@ footer {
     width: 50%;
   }
 
+  div.cover { padding: 5px; }
+
+  span#date {
+    font-size: 5px;
+    padding: 5px 0px 0px 0px;
+  }
+
+  div.header { padding: 0px; }
+
+  .header h1 { font-size: 16px; }
+
+  button#click { font-size: 5px; }
+
+  #click p { padding: 2.5px; }
+
+  span#onCover {
+    padding: 5px 0px 0px 0px;
+    font-size: 3px;
+  }
+
   .cover input, button#sub {
     font-size: 5px;
-    padding: 1px 5px;
-  }
-
-  p#date {
-    padding: 0;
-    font-size: 5px;
-  }
-
-  .header h1 {
-    padding: 0;
-    font-size: 25px;
-  }
-
-  button#click {
-    font-size: 5px;
-  }
-
-  #click p, .cover p {
-    padding: 0px;
-    font-size: 5px;
+    padding: 2.5px 5px;
   }
 }

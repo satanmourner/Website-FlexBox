@@ -19,24 +19,26 @@
       <div class="left"></div>
       <div class="main">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Archive</a></li>
+          <li><a href="web.html">Home</a></li>
+          <li class="cards"><a href="#">Users</a></li>
           <li id="target">
-            <img class="logo" src="logo.svg">
-            <img class="onLogo" src="logo2.png">
+            <img class="logo" src="Logo/logo.svg" draggable="false">
+            <img class="onLogo" src="Logo/logo2.png" draggable="false">
           </li>
-          <li id="article"><a href="#article">About Me</a></li>
-          <li><a href="#">Contact Me</a></li>
+          <li class="article"><a href="#article">About Us</a></li>
+          <li class="footer"><a href="#footer">Contact Us</a></li>
         </ul>
       </div>
       <div class="right"></div>
     </nav>
     <hr>
 
+    <button id="goUp">&uarr;</button>
+
     <div class="bg-container">
       <div class="bg"></div>
       <div class="cover">
-        <p id="date">date</p>
+        <span id="date">date</span>
         <div class="header">
           <h1>Header</h1>
         </div>
@@ -45,23 +47,20 @@
             some
           </p>
         </button>
-        <p>blah blah blah</p>
+        <span id="onCover">blah blah blah</span>
         <form>
           <input type="text" placeholder="Enter Email..."><button id="sub" type="submit">submit</button>
         </form>
       </div>
     </div>
+    <hr>
 
     <div class="container">
       <article>
-        <h2>About Me</h2>
-        <div id="paragraph">
-          <p>if i wanna describe my self in 2 words, i say "computer enthusiast"
-            i've started front-end developing for 3 months and for now i just create my own projects,
-            you can visit all my projects on my gitlab: <a href="https://gitlab.com/mahmoudi.sanaz59"
-              title="My Gitlab">mahmoudi.sanaz59</a> --if you check and like them please give them star ;)
-          </p>
-        </div>
+        <h2>About Us</h2>
+        <p id="paragraph">
+          blah blah blah
+        </p>
       </article>
       <hr>
       <section>
@@ -72,41 +71,54 @@
         <div class="grid-1">grid 2</div>
       </section>
       <hr>
+
       <div class="grid-cards">
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall.png">
+          <img class="img-card" src="Users/wall.png">
           <div class="cover-img"></div>
           <p>title 1</p>
+          <p>something</p>
         </div>
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall2.jpeg">
+          <img class="img-card" src="Users/wall2.jpeg">
           <div class="cover-img"></div>
           <p>title 2</p>
+          <p>something</p>
         </div>
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall.png">
+          <img class="img-card" src="Users/wall.png">
           <div class="cover-img"></div>
           <p>title 3</p>
+          <p>something</p>
         </div>
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall2.jpeg">
+          <img class="img-card" src="Users/wall2.jpeg">
           <div class="cover-img"></div>
           <p>title 1</p>
+          <p>something</p>
         </div>
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall.png">
+          <img class="img-card" src="Users/wall.png">
           <div class="cover-img"></div>
           <p>title 2</p>
+          <p>something</p>
         </div>
         <div class="card-1">
-          <img class="img-card" src="/home/sanaz/Pictures/wall2.jpeg">
+          <img class="img-card" src="Users/wall2.jpeg">
           <div class="cover-img"></div>
           <p>title 3</p>
+          <p>something</p>
         </div>
       </div>
       <hr>
+
       <footer>
-        footer
+        <span>designed by </span><a href="https://gitlab.com/mahmoudi.sanaz59">𝒮𝒶𝓃𝒶𝓏</a>
+        <p>Make something you love &hearts;</p>
+        <div class="footer-logo">
+          <a href="https://twitter.com/SatanMourner"><img src="Icons/twitter.svg"></a>
+          <a href="https://twitter.com/SatanMourner"><img src="Icons/gmail.svg"></a>
+        </div>
       </footer>
 
   </body>
